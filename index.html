@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>域名已弃用提示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            text-align: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .new-link {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .new-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>本域名已弃用</h2>
+        <p>请转至 <a href="http://llm.泥嚎.top" class="new-link">llm.泥嚎.top</a></p>
+        <p>您将在<span id="countdown">5</span>秒后自动跳转...</p>
+    </div>
+
+    <script>
+        // 倒计时自动跳转
+        let seconds = 5;
+        const countdownElement = document.getElementById('countdown');
+        
+        const countdown = setInterval(function() {
+            seconds--;
+            countdownElement.textContent = seconds;
+            
+            if (seconds <= 0) {
+                clearInterval(countdown);
+                window.location.href = "http://llm.泥嚎.top";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
